@@ -1,0 +1,18 @@
+<div *ngIf="product">
+    <h2>{{product.name}}</h2>
+    <div>
+        Name:
+        <input [(ngModel)]="product.name" placeholder="Product Name">
+    </div>
+    <div>
+        Price:
+        <input [(ngModel)]="product.price" placeholder="0">
+    </div>
+    <div>
+        Seller:
+        <input [(ngModel)]="product.seller" placeholder="Seller">
+    </div>
+    <button (click)="updateProduct(product)" *ngIf="product.id">Save</button>
+    <button (click)="deleteProduct(product)" *ngIf="product.id">Delete</button>
+    <button (click)="createProduct(product)" *ngIf="!product.id">Create</button>
+</div>
